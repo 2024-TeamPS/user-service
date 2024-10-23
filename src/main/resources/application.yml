@@ -1,0 +1,39 @@
+server:
+  port: 8081
+  servlet:
+    #    context-path: /myapp # 컨텍스트 경로
+    session:
+      timeout: 30m # 세션 타임아웃
+  # https 사용을 위한 ssl 관련 섲렁(추후에 추가)
+#  ssl:
+#    enabled: true
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cal104_db
+    username: kjw
+    password: Teamps1004! # AES 암호화 예정
+    driver-class-name: org.postgresql.Driver
+    mybatis:
+      mapper-locations: classpath:mapper/**/*.xml
+      sql-session-factory:
+        type: org.mybatis.spring.SqlSessionFactoryBean
+        configuration:
+          #        map-underscore-to-camel-case: true # 언더스코어를 카멜 케이스로 변환
+          cache-enabled: true # 캐시 사용 설정
+          lazy-loading-enabled: true # 지연 로딩 활성화
+          log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # SQL 로그 출력
+    transaction:
+      default-timeout: 30 # 기본 트랜잭션 타임아웃 설정 (초 단위)
+#    # DB 생성전 우회
+#    autoconfigure:
+#      exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  application:
+    name: apigateway-service
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:8787/eureka #유레카 서버에 등록합니다.
