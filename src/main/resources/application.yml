@@ -10,7 +10,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/cal104_db
+    url: jdbc:postgresql://localhost:5432/cal104
     username: kjw
     password: Teamps1004! # AES 암호화 예정
     driver-class-name: org.postgresql.Driver
