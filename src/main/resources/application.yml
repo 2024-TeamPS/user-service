@@ -29,7 +29,7 @@ spring:
 #    autoconfigure:
 #      exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
   application:
-    name: apigateway-service
+    name: user-service
 
 eureka:
   client:
@@ -37,3 +37,8 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://127.0.0.1:8787/eureka #유레카 서버에 등록합니다.
+
+logging:
+  level:
+    com.netflix.discovery: DEBUG
+    org.springframework.cloud.netflix.eureka: DEBUG
