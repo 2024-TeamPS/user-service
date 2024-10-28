@@ -15,7 +15,7 @@ spring:
     password: Teamps1004! # AES 암호화 예정
     driver-class-name: org.postgresql.Driver
     mybatis:
-      mapper-locations: classpath:mapper/**/*.xml
+      mapper-locations: classpath:mapper/*.xml
       sql-session-factory:
         type: org.mybatis.spring.SqlSessionFactoryBean
         configuration:
