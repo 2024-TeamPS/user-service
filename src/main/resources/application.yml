@@ -30,6 +30,10 @@ spring:
 #      exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
   application:
     name: user-service
+  security:
+    user:
+      name: kjw
+      password: Teamps1004!
 
 eureka:
   client:
